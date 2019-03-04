@@ -10,6 +10,14 @@ namespace MyFirstApp
     {
         public string Nev;
         public string Szarmhely;
-        public int Menny;      
+        public int Menny;
+
+        public Fruit(string aNev, string aSzhely, int aMenny)
+        {
+            Nev = aNev;
+            Szarmhely = aSzhely;
+            Menny = aMenny;
+            Console.WriteLine("DEBUG: Fruit() konstruktor meghivás");
+        }
     }
 }

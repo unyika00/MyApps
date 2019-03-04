@@ -9,48 +9,45 @@ namespace program
 {
     class Program
     {
-        private static int gyumolcsszam;
+       
 
         static void Main(string[] args)
         {
-            Fruit [] myfruit  = new Fruit[5];
+           var myfruits = new List<Fruit>(15000);
 
-            string Nev;
-            string Szarmhely;
-            int Menny;
-            
+            string nev;
+            string Szarm;
+            int Mennyi;
+            int gyszam;
+            int osszmenny = 0;
+
+
             Console.Write("Kérem a gyümölcsök számát:");
-            gyumolcsszam  = int.Parse(Console.ReadLine());
+            gyszam = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < gyumolcsszam; i++)
+            for (int i = 0; i < gyszam; i++)
             {
                 Console.Write("Kérem a(z) {0}. gyümölcsöt: ", i + 1);
-                Nev = Console.ReadLine();
+                nev = Console.ReadLine();
                 Console.Write("Kérem a(z) {0}. gyümölcs származási helyét : ", i + 1);
-                Szarmhely = Console.ReadLine();
+                Szarm = Console.ReadLine();
                 Console.Write("Kérem a(z) {0}. gyümölcs menyisége : ", i + 1);
-                Menny = int.Parse(s: Console.ReadLine());
+                Mennyi = int.Parse(s: Console.ReadLine());
+
+                osszmenny += Mennyi;
 
 
 
-
-
-                myfruit[i] = new Fruit();
-                myfruit[i].Nev = Nev;
-                myfruit[i].Szarmhely = Szarmhely;
-                myfruit[i].Menny = Menny;
-
-
-
+                myfruits.Add(new Fruit(nev, Szarm, Mennyi));
             }
-            Console.WriteLine("A gyümölcs tartalma");
-            for (int i = 0; i < gyumolcsszam; i++)
+
             {
 
-                Console.WriteLine(value: myfruit[i].Nev);
+
 
 
             }
+            Console.WriteLine("Gyümölcsök összes mennyisége:" + osszmenny );
             Console.ReadKey();
 
         }

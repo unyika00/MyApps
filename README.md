@@ -5,3 +5,7 @@
 
 ## osztály neve: Fruit 
 # Adattagok:nev:String Szarmhely: String Menny:int 
+
+# különleges metódus az osztályon belül:Konstruktor 
+
+public Fruit(string aNev,string aSzhely, int aMenny ) 
