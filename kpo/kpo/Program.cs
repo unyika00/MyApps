@@ -20,12 +20,14 @@ namespace kpo
 
 
             bool moreGame = true;
+            Random rnd = new Random();
 
             string compChoice = "";
             string playerChoice = "";
 
             int compScore = 0;
             int PlayerScore = 0;
+
 
             Console.WriteLine("*******Kő/Papir/Olló játék******");
 
@@ -47,23 +49,71 @@ namespace kpo
                     case 'o':
                         playerChoice = "olló";
                         break;
+                }
+
+
+
+
+
+                ///Feladat 4:
+                ///Számitogép választásának kérdése: Random ()
+                ///
+                switch (rnd.Next(0, 3))
+                {
+                    case 0:
+                        compChoice = "kő";
+                        break;
+                    case 1:
+                        compChoice = "papir";
+                        break;
+                    case 2:
+                        compChoice = "olló";
+                        break;
 
 
                 }
 
-                Console.Write("akarsz még játszani? i/n");
+                if (
+                    (playerChoice == "kő" && compChoice == "papir") ||
+                    (playerChoice == "papir" && compChoice == "olló") ||
+                    (playerChoice == "olló" && compChoice == "kő")
+                    )
+                {
+
+                    Console.WriteLine("számítógép:" + compChoice + " te:" + playerChoice);
+                    Console.WriteLine("veszttettél! Állás: Szg: {0} játékos: {1}", ++compScore, PlayerScore);
+
+
+                }
+                else if (playerChoice == compChoice)
+
+                {
+                    Console.WriteLine("számítógép:" + compChoice + " te:" + playerChoice);
+                    Console.WriteLine("Döntetlen! Állás: Szg: {0} játékos: {1}", compScore, PlayerScore);
+                }
+                
+                else
+                    
+                {
+                    Console.WriteLine("számítógép:" + compChoice + " te:" + playerChoice);
+                    Console.WriteLine("veszttettél! Állás: Szg: {0} játékos: {1}", compScore, ++PlayerScore);
+                }
+
+        
+
+                Console.WriteLine("akarsz még játszani? i/n");
                 if (Console.ReadKey(true).KeyChar == 'n')
                 {
                     moreGame = false;
                 }
 
             } while (moreGame);
-
-           
         }
     }
-    
 }
+    
+
+
 
             
         
