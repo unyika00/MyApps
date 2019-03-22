@@ -96,7 +96,7 @@ namespace kpo
                     
                 {
                     Console.WriteLine("számítógép:" + compChoice + " te:" + playerChoice);
-                    Console.WriteLine("veszttettél! Állás: Szg: {0} játékos: {1}", compScore, ++PlayerScore);
+                    Console.WriteLine("Nyertél! Állás: Szg: {0} játékos: {1}", compScore, ++PlayerScore);
                 }
 
         
