@@ -18,7 +18,7 @@ namespace eesf
                 int iPage;
                 string sAuthor, sName;
                 //A létrehozott új típussal inicializálunk egy objektumot
-                Excersise ex = new Excersise("Gál Arnold");
+                Excercise ex = new Excercise("Unyi Szabolcs");
 
                 ex.Name = "Gál Arnold";
 
@@ -143,10 +143,16 @@ namespace eesf
                             iPage = int.Parse(Console.ReadLine());
                             Lista.Add(new Book { Name = sName, Author = sAuthor, Page = iPage });
                             break;
+                        case 't':
+                            Console.WriteLine("melyik könyvet szeretnéd törölni?");
+                            sName = Console.ReadLine();
+                            Lista.Remove(Lista.Find(x => x.Name.Contains(sName)));
+                            break;
+                            
                         case 'k':
                             moreBook = false;
                             break;
-                        case 't':
+                        case 'l':
                             Console.Write("Kérem a könyv címét:");
                             foreach (Book book in Lista)
                             {
@@ -165,6 +171,9 @@ namespace eesf
 
 
             }
+        }
+    }
+}
 
         
     
